@@ -2,7 +2,7 @@
 ---
 
 ## Goal
-    To build a marketplace of local available microtasks and temporary jobs in order to help people to make money as fast as possible
+  To build a marketplace of local available microtasks and temporary jobs in order to help people to make money as fast as possible
 
 ## Tech stack
     - Backend
