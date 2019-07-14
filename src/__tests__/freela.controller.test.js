@@ -1,9 +1,16 @@
 const request = require('supertest');
-const app = require('../server')
+const app = require('../server');
+const mongoDB = require('../db');
 
 // testing the Freela restful API as well as the search interface using country, state and city
 describe("Freela's API test", () => {
 
+    beforeAll(() => {
+        mongoDB.connect();
+    });
+    afterAll((done) => {
+        mongoDB.disconnect(done);
+    });
 
     test('It should answer the GET method to / with the newest available freelas ', () => {
         return request(app).get('/')
@@ -160,8 +167,8 @@ describe("Freela's API test", () => {
         expect(freelaService.get(id)).not.toBeNull();
 
         // submting the delete
-        const response = await request(app).delete(`/freelas/${id}`);
-        expect(response.status).toBe(204);        
+        const response2 = await request(app).delete(`/freelas/${id}`);
+        expect(response2.status).toBe(204);        
         expect(freelaService.get(id)).toBeNull();
     } )
 
