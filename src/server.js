@@ -1,11 +1,10 @@
-const express = require('express');
-const app = express();
-const freelasRouter = require('./controllers/freelas.restful');
+const express = require('express')
+const app = express()
+const freelasRouter = require('./controllers/freelas.restful')
 
-
-app.get('/',(req,res)=>{
-    res.status(200).send('ok');
+app.get('/', (req, res) => {
+    res.status(200).send('ok')
 })
-app.use('/freelas',freelasRouter);
+app.use('/freelas', freelasRouter)
 
-module.exports = app;
+module.exports = app

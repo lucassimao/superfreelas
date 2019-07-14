@@ -1,4 +1,3 @@
 module.exports = {
-    dbUrl: 'mongodb://localhost:27017/freelas'
+    dbUrl: 'mongodb://localhost:27017/freelas',
 }
-  
