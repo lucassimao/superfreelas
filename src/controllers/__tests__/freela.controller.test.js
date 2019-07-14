@@ -1,6 +1,6 @@
 const request = require('supertest');
-const app = require('../server');
-const mongoDB = require('../db');
+const app = require('../../server');
+const mongoDB = require('../../db');
 
 // testing the Freela restful API as well as the search interface using country, state and city
 describe("Freela's API test", () => {
@@ -20,8 +20,6 @@ describe("Freela's API test", () => {
                     expect(Array.isArray(res.body.freelas)).toBeTruthy();     
                     expect(res.body.freelas.length).toBeLessThanOrEqual(FreelaController.PAGE_SIZE);   
                 });
-        // const response = await request(app).get('/');
-        // expect(response.header['content-type']).toBe();
     });
 
     test('GET to /freelas/br should return all freelas available in Brazil', ()=>{
