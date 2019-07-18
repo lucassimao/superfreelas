@@ -1,15 +1,15 @@
 const request = require('supertest')
 const app = require('../../server')
-const mongoDB = require('../../db')
+// const mongoDB = require('../../db')
 
 // testing the Freela restful API as well as the search interface using country, state and city
 describe("Freela's API test", () => {
-    beforeAll(() => {
-        mongoDB.connect()
-    })
-    afterAll(done => {
-        mongoDB.disconnect(done)
-    })
+    // beforeAll(() => {
+        // mongoDB.connect()
+    // })
+    // afterAll(done => {
+        // mongoDB.disconnect(done)
+    // })
 
     test('It should answer the GET method to / with the newest available freelas ', () => {
         return request(app)
